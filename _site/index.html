@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -108,21 +112,27 @@
 
 <h2 id="system">System</h2>
 
-<p><span style="color:#7354f3"><strong>Winder</strong></span> supports three features for tape understanding and navigation: (a) highlighting objects on playback of voice recordings, (b) inline thumbnail images of objects on automatic transcripts, and (c) search of recordings based on objects.</p>
+<p>In <span style="color:#7354f3"><strong>Winder</strong></span>, users send <em>linked tapes</em>, which are recordings of their voice and clicks on objects on the UI design. The system generates bidirectional links between voice snippets and clicked-on objects to support navigation and understanding the receiver side.</p>
 
-<p class="center"><img src="/assets/img/teaser.png" alt="Teaser image of the main features in Winder" width="80%" /></p>
+<p>The main components of the system’s interface are (a) the top bar, (b) the list of linked tapes, and (c) the transcript space.</p>
 
-<p>qwlnwq nwpqn wpqn pnpasn psnqp npqn pqnsp nsp nqpqnp qnp nspqn psqn npq nspn psnp nspqns pqns pn spn spqnsqp n</p>
+<p class="center"><img src="/assets/img/winder_main.png" alt="Winder next to the design for a screen of a mobile application" width="90%" /></p>
 
-<h3 id="recording">Recording</h3>
+<h3 id="object-highlighting-on-voice-playback">Object Highlighting on Voice Playback</h3>
+
+<p>When the user plays a tape, <span style="color:#7354f3"><strong>Winder</strong></span> Winder displays the version of the document when the tape was recorded, and plays the voice audio while highlighting objects as they were clicked during recording.</p>
+
+<p class="center"><img src="/assets/img/winder_highlight.png" alt="An image of a salad in the UI design is highlighted while a recording appears to be playing in Winder." width="90%" /></p>
+
+<h3 id="inline-thumbnail-images-on-voice-transcripts">Inline Thumbnail Images on Voice Transcripts</h3>
+
+<p class="inline"><img src="/assets/img/winder_transcript.png" alt="A transcript of a voice recording is shown with inline thumbnail images of UI design objects." width="50%" /></p>
+
+<p style="float:right"><span style="color:#7354f3"><strong>Winder</strong></span> provides automatic transcripts of the voice recordings (generated through speech-to-text). On the transcript, it embeds thumbnail images of the objects clicked during the recording inline with the words of the transcript.</p>
+
+<h3 id="object-based-search-of-voice-recordings">Object-based Search of Voice Recordings</h3>
 
 <p>qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n</p>
-
-<h3 id="playing">Playing</h3>
-
-<p>qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n
-qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n
-qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n</p>
 
 <hr />
 

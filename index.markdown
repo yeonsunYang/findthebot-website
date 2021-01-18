@@ -10,21 +10,30 @@ Team members commonly collaborate on visual documents remotely and asynchronousl
 
 ## System
 
-<span style="color:{{site.syscolor}}">**Winder**</span> supports three features for tape understanding and navigation: (a) highlighting objects on playback of voice recordings, (b) inline thumbnail images of objects on automatic transcripts, and (c) search of recordings based on objects.
+In <span style="color:{{site.syscolor}}">**Winder**</span>, users send *linked tapes*, which are recordings of their voice and clicks on objects on the UI design. The system generates bidirectional links between voice snippets and clicked-on objects to support navigation and understanding the receiver side.
+
+The main components of the system's interface are (a) the top bar, (b) the list of linked tapes, and (c) the transcript space.
 
 {: .center}
-![Teaser image of the main features in Winder](/assets/img/teaser.png){:width="80%"}
+![Winder next to the design for a screen of a mobile application](/assets/img/winder_main.png){: width="90%"}
 
-qwlnwq nwpqn wpqn pnpasn psnqp npqn pqnsp nsp nqpqnp qnp nspqn psqn npq nspn psnp nspqns pqns pn spn spqnsqp n
+### Object Highlighting on Voice Playback
 
-### Recording
+When the user plays a tape, <span style="color:{{site.syscolor}}">**Winder**</span> Winder displays the version of the document when the tape was recorded, and plays the voice audio while highlighting objects as they were clicked during recording.
 
-qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n
+{: .center}
+![An image of a salad in the UI design is highlighted while a recording appears to be playing in Winder.](/assets/img/winder_highlight.png){: width="90%"}
 
-### Playing
+### Inline Thumbnail Images on Voice Transcripts
 
-qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n
-qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n
+{: .inline}
+![A transcript of a voice recording is shown with inline thumbnail images of UI design objects.](/assets/img/winder_transcript.png){: width="50%"}
+
+{: style="float:right"}
+<span style="color:{{site.syscolor}}">**Winder**</span> provides automatic transcripts of the voice recordings (generated through speech-to-text). On the transcript, it embeds thumbnail images of the objects clicked during the recording inline with the words of the transcript.
+
+### Object-based Search of Voice Recordings
+
 qlwnwlqnwonp qnpwqn pwqnwp npwqnpw nqp nwpqn pqnpwnp nwpqn pwqnp wnp nqwpn pqwnw pqnpw nqp nwqpnw pqnp wqnp wnqp nqwpnwqp n
 
 ------

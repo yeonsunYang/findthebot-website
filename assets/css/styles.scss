@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+.wrapper {
+  max-width: calc(900px - (30px * 2));
+}
+
 h1 {
   font-weight: bold;
   font-size: 40px;
@@ -103,4 +107,9 @@ iframe {
 .logos img {
   padding: 0 4px 0 4px;
   height: 24px;
+}
+
+.inline {
+  display: inline-block;
+  float: left;
 }
