@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 .wrapper {
-  max-width: calc(900px - (30px * 2));
+  max-width: calc(1000px - (30px * 2));
 }
 
 h1 {
@@ -15,15 +15,16 @@ h1 {
 }
 
 hr {
-  margin-bottom: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   background-color: #ccc;
   border: 0px;
   height: 1px;
 }
 
 h4 {
-  font-style: italic;
   color: #666;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
@@ -34,22 +35,22 @@ h2 {
 
 h3 {
   font-size: 20px;
+  padding-top: 12px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 20px;
-  color: #444;
-  font-weight: 200;
+  color: #333;
+  font-weight: 300;
 }
 
 .video-wrapper {
   text-align: center;
   margin-bottom: 20px;
   position: relative;
-  margin-left: 10%;
-  width: 80%;
-  padding-bottom: 45%;
+  width: 100%;
+  padding-bottom: 56.25%;
 }
 
 iframe {
@@ -62,7 +63,6 @@ iframe {
 
 .authors-wrapper {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .author-container {
@@ -109,7 +109,19 @@ iframe {
   height: 24px;
 }
 
-.inline {
+.img-left {
   display: inline-block;
-  float: left;
+  width: 45%;
+}
+
+.text-right {
+  display: inline-block;
+  width: calc(54% - 16px);
+  margin-left: 16px;
+  vertical-align: middle;
+}
+
+.quote {
+  width: 70%;
+  margin-left: 15%
 }

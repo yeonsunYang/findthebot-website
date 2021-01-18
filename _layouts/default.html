@@ -22,11 +22,11 @@
   <body>
     <div>
       <div class="wrapper">
-        <h1 style="color: {{site.syscolor}}; font-family: '{{site.sysfont}}', sans-serif;">
+        <h1 style="font-family: '{{site.sysfont}}', sans-serif;">
           {% if site.syslogo %}
             <img src="{{site.syslogo}}" width="40px" style="vertical-align:middle"/>
           {% endif %}
-          <span style="vertical-align:middle"/>{{site.title}}</span>
+          <span style="vertical-align:middle; color: {{site.syscolor}};"/>{{site.title}}</span>
         </h1>
         <h4>{{site.description}}</h4>
         <div class="authors-wrapper">
