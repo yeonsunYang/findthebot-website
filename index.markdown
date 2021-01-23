@@ -14,15 +14,15 @@ In <span style="color:{{site.syscolor}}">Winder</span>, users send *linked tapes
 
 The main components of the system's interface are (a) the top bar, (b) the list of linked tapes, and (c) the transcript space.
 
-{: .center}
-![Winder next to the design for a screen of a mobile application](/assets/img/winder_main.png){: width="80%"}
+{: .center .sys-img}
+![Winder next to the design for a screen of a mobile application](/assets/img/winder_main.png)
 
 ### Object Highlighting on Voice Playback
 
 When the user plays a tape, <span style="color:{{site.syscolor}}">Winder</span> Winder displays the version of the document when the tape was recorded, and plays the voice audio while highlighting objects as they were clicked during recording.
 
-{: .center}
-![An image of a salad in the UI design is highlighted while a recording appears to be playing in Winder.](/assets/img/winder_highlight.png){: width="90%"}
+{: .center .sys-img}
+![An image of a salad in the UI design is highlighted while a recording appears to be playing in Winder.](/assets/img/winder_highlight.png)
 
 ### Inline Thumbnail Images on Voice Transcripts
 
@@ -36,8 +36,8 @@ When the user plays a tape, <span style="color:{{site.syscolor}}">Winder</span> 
 
 If the user clicks on an object in the UI design, <span style="color:{{site.syscolor}}">Winder</span> retrieves all tapes in which that object was selected. For each tape, the segment of the tape’s transcript during which the object had been clicked on is shown.
 
-{: .center}
-![A gray rectangle is clicked in the UI design. In Winder, a list of tapes shows a short snippets from transcripts and thumbnails of the gray rectangle.](/assets/img/winder_search.png){: width="90%"}
+{: .center .sys-img}
+![A gray rectangle is clicked in the UI design. In Winder, a list of tapes shows a short snippets from transcripts and thumbnails of the gray rectangle.](/assets/img/winder_search.png)
 
 ------
 
@@ -65,6 +65,26 @@ T5M2: *"With the voice recordings and the feature that showed what the users cli
 ## CHI 2021 Paper (Camera-ready)
 
 [Link to the PDF][1]
+
+## Bibtex
+<pre>
+@inproceedings{10.1145/3313831.3376390,
+          author = {Yang, Saelyne and Lee, Changyoon and Shin, Hijung Valentina and Kim, Juho},
+          title = {Snapstream: Snapshot-Based Interaction in Live Streaming for Visual Art},
+          year = {2020},
+          isbn = {9781450367080},
+          publisher = {Association for Computing Machinery},
+          address = {New York, NY, USA},
+          url = {https://doi.org/10.1145/3313831.3376390},
+          doi = {10.1145/3313831.3376390},
+          booktitle = {Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
+          pages = {1–12},
+          numpages = {12},
+          keywords = {live streaming, online interaction, chat interaction, context sharing},
+          location = {Honolulu, HI, USA},
+          series = {CHI ’20}
+        }
+</pre>
 
 ------
 
