@@ -33,9 +33,13 @@
         {% for author in site.data.authors %}
           <div class="author-container">
             <div class="author-image">
-              <a href="{{author.website}}">
+              {% if author.website %}
+                <a href="{{author.website}}">
+                  <img src="/assets/img/{{author.img}}"/>
+                </a>
+              {% else %}
                 <img src="/assets/img/{{author.img}}"/>
-              </a>
+              {% endif %}
             </div>
             <p>
             {% if author.website %}
