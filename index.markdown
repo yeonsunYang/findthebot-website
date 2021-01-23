@@ -45,8 +45,8 @@ If the user clicks on an object in the UI design, <span style="color:{{site.sysc
 
 Tapes recorded by participants in a five-day user study were analyzed and categorized. The results showed that participants used <span style="color:{{site.syscolor}}">Winder</span> for a variety of purposes&mdash;with most tapes used for "Describing" or "Justifying" design choices, or "Coordinating" work within a team.
 
-{: .center}
-![Table showing descriptions and example snippets of each tape category. Additionally, the table shows the perentage of tapes that fit into that category.](/assets/img/results_type.png){: width="90%"}
+{: .center .sys-img}
+![Table showing descriptions and example snippets of each tape category. Additionally, the table shows the perentage of tapes that fit into that category.](/assets/img/results_type.png)
 
 Participants mentioned how <span style="color:{{site.syscolor}}">Winder</span> increased their shared understanding, motivated them to work, and made them feel as if they were co-present.
 
@@ -68,22 +68,7 @@ T5M2: *"With the voice recordings and the feature that showed what the users cli
 
 ## Bibtex
 <pre>
-@inproceedings{10.1145/3313831.3376390,
-          author = {Yang, Saelyne and Lee, Changyoon and Shin, Hijung Valentina and Kim, Juho},
-          title = {Snapstream: Snapshot-Based Interaction in Live Streaming for Visual Art},
-          year = {2020},
-          isbn = {9781450367080},
-          publisher = {Association for Computing Machinery},
-          address = {New York, NY, USA},
-          url = {https://doi.org/10.1145/3313831.3376390},
-          doi = {10.1145/3313831.3376390},
-          booktitle = {Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems},
-          pages = {1–12},
-          numpages = {12},
-          keywords = {live streaming, online interaction, chat interaction, context sharing},
-          location = {Honolulu, HI, USA},
-          series = {CHI ’20}
-        }
+TBD
 </pre>
 
 ------
