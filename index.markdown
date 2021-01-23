@@ -14,14 +14,14 @@ In <span style="color:{{site.syscolor}}">Winder</span>, users send *linked tapes
 
 The main components of the system's interface are (a) the top bar, (b) the list of linked tapes, and (c) the transcript space.
 
-{: .center .sys-img}
+{: .sys-img}
 ![Winder next to the design for a screen of a mobile application](/assets/img/winder_main.png)
 
 ### Object Highlighting on Voice Playback
 
 When the user plays a tape, <span style="color:{{site.syscolor}}">Winder</span> Winder displays the version of the document when the tape was recorded, and plays the voice audio while highlighting objects as they were clicked during recording.
 
-{: .center .sys-img}
+{: .sys-img}
 ![An image of a salad in the UI design is highlighted while a recording appears to be playing in Winder.](/assets/img/winder_highlight.png)
 
 ### Inline Thumbnail Images on Voice Transcripts
@@ -36,7 +36,7 @@ When the user plays a tape, <span style="color:{{site.syscolor}}">Winder</span> 
 
 If the user clicks on an object in the UI design, <span style="color:{{site.syscolor}}">Winder</span> retrieves all tapes in which that object was selected. For each tape, the segment of the tape’s transcript during which the object had been clicked on is shown.
 
-{: .center .sys-img}
+{: .sys-img}
 ![A gray rectangle is clicked in the UI design. In Winder, a list of tapes shows a short snippets from transcripts and thumbnails of the gray rectangle.](/assets/img/winder_search.png)
 
 ------
@@ -45,7 +45,7 @@ If the user clicks on an object in the UI design, <span style="color:{{site.sysc
 
 Tapes recorded by participants in a five-day user study were analyzed and categorized. The results showed that participants used <span style="color:{{site.syscolor}}">Winder</span> for a variety of purposes&mdash;with most tapes used for "Describing" or "Justifying" design choices, or "Coordinating" work within a team.
 
-{: .center .sys-img}
+{: .sys-img}
 ![Table showing descriptions and example snippets of each tape category. Additionally, the table shows the perentage of tapes that fit into that category.](/assets/img/results_type.png)
 
 Participants mentioned how <span style="color:{{site.syscolor}}">Winder</span> increased their shared understanding, motivated them to work, and made them feel as if they were co-present.
