@@ -68,7 +68,22 @@ T5M2: *"With the voice recordings and the feature that showed what the users cli
 
 ## Bibtex
 <pre>
-TBD
+@inproceedings{10.1145/3411764.3445686,
+  author = {Kim, Tae Soo and Kim, Seungsu and Choi, Yoonseo and Kim, Juho},
+  title = {Winder: Linking Speech and Visual Objects to Support Communication in Asynchronous Collaboration},
+  year = {2021},
+  isbn = {9781450380966},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3411764.3445686},
+  doi = {10.1145/3411764.3445686},
+  booktitle = {Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems},
+  pages = {1–17},
+  numpages = {17},
+  keywords = {Team Collaboration; Asynchronous Communication; Speech; Voice; Multimodal Input; Visual Document; User Interface Design},
+  location = {Yokohama, Japan},
+  series = {CHI ’21}
+}
 </pre>
 
 ------
