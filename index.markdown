@@ -96,4 +96,4 @@ T5M2: *"With the voice recordings and the feature that showed what the users cli
 This research was supported by the [KAIST](https://kaist.ac.kr) UP Program.
 
 
-[1]:{{site.url}}/papers/CHI2021___Winder___CameraReady.pdf
+[1]:https://kixlab.github.io/website-files/2021/chi2021-Winder-paper.pdf
