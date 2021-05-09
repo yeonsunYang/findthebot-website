@@ -65,6 +65,7 @@ T5M2: *"With the voice recordings and the feature that showed what the users cli
 ## CHI 2021 Paper (Camera-ready)
 
 [Link to the PDF][1]
+
 [ACM DL Link][2]
 
 ## Bibtex
