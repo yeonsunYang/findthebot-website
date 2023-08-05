@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cells, Generators, and Lenses</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="shortcut icon" href="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <script src="https://kit.fontawesome.com/edbb373435.js" crossorigin="anonymous"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <base target="_blank">
+  <body>
+    <div>
+      <div class="wrapper">
+        <h1 style="font-family: 'Lato', sans-serif; text-align: center;">
+          <span style="vertical-align:middle; color: #0066FF">Cells, Generators, and Lenses</span>
+        </h1>
+        <h4 style="text-align: center; font-size: 22px;">Design Framework for Object-Oriented Interaction with Large Language Models</h4>
+        <div class="authors-wrapper">
+        
+          <div class="author-container">
+            <div class="author-image">
+              
+                <a href="https://taesookim.com">
+                  <img src="/assets/img/taesoo.jpeg"/>
+                </a>
+              
+            </div>
+            <p>
+            
+              <a href="https://taesookim.com">
+                Tae Soo Kim
+              </a>
+            
+            </p>
+            <p>
+              KAIST
+            </p>
+          </div>
+        
+          <div class="author-container">
+            <div class="author-image">
+              
+                <a href="https://yoonjoolee.com">
+                  <img src="/assets/img/yoonjoo.jpeg"/>
+                </a>
+              
+            </div>
+            <p>
+            
+              <a href="https://yoonjoolee.com">
+                Yoonjoo Lee
+              </a>
+            
+            </p>
+            <p>
+              KAIST
+            </p>
+          </div>
+        
+          <div class="author-container">
+            <div class="author-image">
+              
+                <a href="https://minsukchang.com">
+                  <img src="/assets/img/minsuk.jpeg"/>
+                </a>
+              
+            </div>
+            <p>
+            
+              <a href="https://minsukchang.com">
+                Minsuk Chang
+              </a>
+            
+            </p>
+            <p>
+              Google
+            </p>
+          </div>
+        
+          <div class="author-container">
+            <div class="author-image">
+              
+                <a href="https://juhokim.com">
+                  <img src="/assets/img/juho.jpg"/>
+                </a>
+              
+            </div>
+            <p>
+            
+              <a href="https://juhokim.com">
+                Juho Kim
+              </a>
+            
+            </p>
+            <p>
+              KAIST
+            </p>
+          </div>
+        
+        </div>
+      </div>
+      <div class="button-container">
+        <a class="button" href="https://kixlab.github.io/website-files/2023/uist2023-llmobjects-paper.pdf" target="_blank">
+          <span>Paper</span>
+          <i class="fa-regular fa-file-pdf"></i>
+        </a>
+        <a class="button" href="https://github.com/kixlab/llm-ui-objects" target="_blank">
+          <span>Library</span>
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper" style="width: 100%;">
+      <hr/>
+      <p class="introduction"><span style='color: #0066FF;'><b>Cells, Generators, and Lenses</b></span> is a design framework for LLM-powered writing interfaces that <b>modularizes</b> the components of generation configurations (e.g., input, model parameters, output spaces) into <b>interactive objects</b>. The framework aims to <b>guide</b> the design of interfaces that support end-users' <b>iteration and experimentation</b> with LLM configurations while writing with LLMs.<br/><br/>We introduce three interfaces designed through the framework for different writing tasks: <b>copywriting</b>, <b>email composing</b>, and <b>story writing</b>. To facilitate the adoption of the framework, we package the UI components developed for the interactive objects into a <b>ReactJS library</b>.</p>
+    </div>
+    <div class="wrapper">
+      <hr/>
+      
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/_Y0d_uyA6XA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <hr/>
+      
+      <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">About</h1>
+  </header>
+
+  <div class="post-content">
+    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+
+<p>You can find the source code for Minima at GitHub:
+<a href="https://github.com/jekyll">jekyll</a> /
+<a href="https://github.com/jekyll/minima">minima</a></p>
+
+<p>You can find the source code for Jekyll at GitHub:
+<a href="https://github.com/jekyll">jekyll</a> /
+<a href="https://github.com/jekyll/jekyll">jekyll</a></p>
+
+
+  </div>
+
+</article>
+
+    </div>
+    
+  </body>
+</html>

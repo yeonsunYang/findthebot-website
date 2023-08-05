@@ -10,10 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css">
+    <script src="https://kit.fontawesome.com/edbb373435.js" crossorigin="anonymous"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -22,13 +27,10 @@
   <body>
     <div>
       <div class="wrapper">
-        <h1 style="font-family: '{{site.sysfont}}', sans-serif;">
-          {% if site.syslogo %}
-            <img src="{{site.syslogo}}" width="40px" style="vertical-align:middle"/>
-          {% endif %}
-          <span style="vertical-align:middle; color: {{site.syscolor}};"/>{{site.title}}</span>
+        <h1 style="font-family: '{{site.sysfont}}', sans-serif; text-align: center;">
+          <span style="vertical-align:middle; color: {{site.syscolor}}">{{site.title}}</span>
         </h1>
-        <h4>{{site.description}}</h4>
+        <h4 style="text-align: center; font-size: 22px;">{{site.description}}</h4>
         <div class="authors-wrapper">
         {% for author in site.data.authors %}
           <div class="author-container">
@@ -57,6 +59,20 @@
         {% endfor %}
         </div>
       </div>
+      <div class="button-container">
+        <a class="button" href="{{site.paper}}" target="_blank">
+          <span>Paper</span>
+          <i class="fa-regular fa-file-pdf"></i>
+        </a>
+        <a class="button" href="{{site.code}}" target="_blank">
+          <span>Library</span>
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="wrapper" style="width: 100%;">
+      <hr/>
+      <p class="introduction">{{site.introduction}}</p>
     </div>
     <div class="wrapper">
       <hr/>

@@ -2,89 +2,78 @@
 layout: default
 ---
 
-## Abstract
+## Design Framework
 
-Team members commonly collaborate on visual documents remotely and asynchronously. Particularly, students are frequently restricted to this setting as they often do not share work schedules or physical workspaces. As communication in this setting has delays and limits the main modality to text, members exert more effort to reference document objects and understand others' intentions. We propose <span style="color:{{site.syscolor}}">Winder</span>, a Figma plugin that addresses these challenges through *linked tapes*&mdash;multimodal comments of clicks and voice. Bidirectional links between the clicked-on objects and voice recordings facilitate understanding tapes: selecting objects retrieves relevant recordings, and playing recordings highlights related objects. By periodically prompting users to produce tapes, <span style="color:{{site.syscolor}}">Winder</span> preemptively obtains information to satisfy potential communication needs. Through a five-day study with eight teams of three, we evaluated the system's impact on teams asynchronously designing graphical user interfaces. Our findings revealed that producing linked tapes could be as lightweight as face-to-face (F2F) interactions while transmitting intentions more precisely than text. Furthermore, with preempted tapes, teammates coordinated tasks and invited members to build on each others' work.
-
-------
-
-## System
-
-In <span style="color:{{site.syscolor}}">Winder</span>, users send *linked tapes*, which are recordings of their voice and clicks on objects on the UI design. The system generates bidirectional links between voice snippets and clicked-on objects to support navigation and understanding the receiver side.
-
-The main components of the system's interface are (a) the top bar, (b) the list of linked tapes, and (c) the transcript space.
+Our design framework represents the three main components of generation pipelines---<b>input, model, outputs</b>---into three iteractive objects---<b style="color:{{site.syscolor}}">cells, generators, and lenses</b>. By modularizing the components into these objects, writing interfaces can enable end-users to <b>(1)</b> maintain multiple <b>versions</b> of the generation components, <b>(2)</b> use each object as a <b>testing</b> sandbox for different sub-configurations, and <b>(3)</b> <b>compose</b> these objects into new and parallel configurations.
 
 {: .sys-img}
-![Winder next to the design for a screen of a mobile application](/assets/img/winder_main.png)
+![The teaser figure for the framework. Three headers are shown: Input, Model, and Output. Underneath each header there are diagrams depicting the Cells, Generators, and Lenses, respectively. Underneath Cells, dots that represent cells are shown. These dots are linked and one path of dots is highlighted with text for that path also displayed underneath the path. Underneath Model, rectangles that represent generators are displayed and these generators are connected with lines to the dots. One generator is highlighted with information about the model underneath it (i.e., GPT-4 model and its parameters). Underneath Lenses, three summarized representations of lenses are displayed: a list lens that shows generations as a list of text, a ratings lens that show ratings in bars, and a space lens that shows the generations as dots in a 2D space. These lenses are linked to the generators with lines.](/assets/img/teaser.png)
 
-### Object Highlighting on Voice Playback
-
-When the user plays a tape, <span style="color:{{site.syscolor}}">Winder</span> Winder displays the version of the document when the tape was recorded, and plays the voice audio while highlighting objects as they were clicked during recording.
-
-{: .sys-img}
-![An image of a salad in the UI design is highlighted while a recording appears to be playing in Winder.](/assets/img/winder_highlight.png)
-
-### Inline Thumbnail Images on Voice Transcripts
+### Cells
 
 {: .img-left}
-![A transcript of a voice recording is shown with inline thumbnail images of UI design objects.](/assets/img/winder_transcript.png)
+![Abstract representation of cell objects and their interactions. An abstract representation of a text editor is shown where the last part of the text is highlighted. This highlighted part is connected to a tree of dots, where each dot represents a cell and they are connected with lines to show their ordering. One branch out of the tree is labelled with "create" to show how cells can be created. Also, a branch that is connected coming out of the tree is shown with an arrow labeled "assemble" to show how cells can be assembled together into bigger ensembles. There is an arrow going between the two bottom branches of the tree it is labelled "copy" to show that cells can be copied. Next to the tree another abstract representation of the highlighted text is shown where parts are now highlighted in a different color and it is labelled "modify".](/assets/img/cells.png)
 
 {: .text-right}
-<span style="color:{{site.syscolor}}">Winder</span> provides automatic transcripts of the voice recordings (generated through speech-to-text). On the transcript, it embeds thumbnail images of the objects clicked during the recording inline with the words of the transcript.
+<b style="color: {{site.syscolor}}">Cells</b> are object representations of discrete input units. For example, a line of a prompt, an example in a prompt, a sentence of a story, a keyword, etc. An interface that supports cells can enable end-users to <b>create</b> multiple cells to maintian multiple input variatiosn to test, and <b>assemble</b> cells into comprehensive inputs for an LLM.
 
-### Object-based Search of Voice Recordings
+### Generators
 
-If the user clicks on an object in the UI design, <span style="color:{{site.syscolor}}">Winder</span> retrieves all tapes in which that object was selected. For each tape, the segment of the tape’s transcript during which the object had been clicked on is shown.
+{: .img-left}
+![Image shows several tree of cells or dots that represent different ensembles of cells. There are lines connecting the trees to three rectangles that are labelled "Generators". One of these lines is labelled with an arrow that says "link". The top rectangle is connected to another rectangle that shows a slider labelled "parameter" and an arrow going left-to-right labelled "modify". The middle rectangle is connected to another rectangle that contains a row with "parameter" and an arrow going up, a row labelled "generations" and showing three abstract representations of text, and another row labelled "parameter" with an arrow going down. There is an arrow going down next to this rectangle that says "track".The bottom rectangles is more transparent and is labelled with "create".](/assets/img/generators.png)
 
-{: .sys-img}
-![A gray rectangle is clicked in the UI design. In Winder, a list of tapes shows a short snippets from transcripts and thumbnails of the gray rectangle.](/assets/img/winder_search.png)
+{: .text-right}
+<b style="color: {{site.syscolor}}">Generators</b> are object representations of model settings (i.e., type of LLM and parameter values). By supporting generators, interfaces can allow end-users to <b>maintain</b> multiple parameter settings, and flexibly <b>link</b> these with different inputs according to their present needs.
 
-------
+### Lenses
 
-## Results
+{: .img-left}
+![Image displays three rectangles (the middle one in a different color) that represent generators and are connected to two containers that are labelled "lens". There is an arrow between the middle generator and the top lens that is labelled "link". The top container shows dots spread out in two different colors that represent the top generator and middle generator. The bottom generator is connected to the bottom container which shows two boxes positioned vertically with abstract representations of text. This bottom container is linked to another container that contains rating bars and there is an arrow between these two that is labelled "assemble".](/assets/img/lenses.png)
 
-Tapes recorded by participants in a five-day user study were analyzed and categorized. The results showed that participants used <span style="color:{{site.syscolor}}">Winder</span> for a variety of purposes&mdash;with most tapes used for "Describing" or "Justifying" design choices, or "Coordinating" work within a team.
-
-{: .sys-img}
-![Table showing descriptions and example snippets of each tape category. Additionally, the table shows the perentage of tapes that fit into that category.](/assets/img/results_type.png)
-
-Participants mentioned how <span style="color:{{site.syscolor}}">Winder</span> increased their shared understanding, motivated them to work, and made them feel as if they were co-present.
-
-{: .center .quote}
-T2M1: *"The recordings left behind by my group members helped clarify some of the misunderstandings or confusions that I had."*
-
-{: .center .quote}
-T1M2: *"Understanding [my team members] actions and intentions was fun somehow and made me work harder."*
-
-{: .center .quote}
-T5M2: *"With the voice recordings and the feature that showed what the users clicked on as they talked, it was as if we were working together."*
-
+{: .text-right}
+<b style="color: {{site.syscolor}}">Lenses</b> are object representations of spaces that represent and visualize the generations produced. For example, these can include a list, a gallery, or a real-time confidence visualization. An interface can provide end-users with diverse lenses to support <b>navigation</b> of generated outputs based on personal, changing needs and goals.
 
 ------
 
-## CHI 2021 Paper (Camera-ready)
+## Example Interfaces
 
-[Link to the PDF][1]
+With this framework, we designed and developed three interfaces to demonstrate how the proposed interactive objects can support writing with LLMs.
 
-[ACM DL Link][2]
+### Copywriting Interface
+
+![The copywriting interface which is partitioned in four components. The top-left components shows text boxes aligned according to lines, where the are multiple text boxes per line and only one in each line is highlighted.. The bottom-left component shows four buttons that represent generators where each generator shows the four parameters but with different values. There is also a button below these generators with a "+" mark. The bottom-right component shows two containers: one contains a list of text, and the other contains radial rating indicators. The top-right component shows a text editor. Next to the screenshot of the copywriting interface, we can see multiple sub-components. The first sub-component shows a generators where the temperature parameter has been clicked to reveal a control panel that shows the current temperature value and a slider to change the value. The second sub-component shows a generator where its history of changes is displayed. The history shows previous temperature changes and outputs that the generators has produced. The final sub-component shows the space and rating lens.](/assets/img/copywriting.png)
+
+In our <b>copywriting interface</b>, end-users can create and maintain alternative specifications for their desired advertisement as cells, and then assemble these into new combinations. The interface allows end-users to create multiple generators to test diverse parameter settings and to use various lenses to explore generated advertisements based on their content, similarity, sentiment and/or emotion.
+
+### Email Composing Interface
+
+![The email composing interface, which is split into two parts. On the left, there is a text editor that shows one portion of text highlighted in blue (the selected text) and the following portion of the text in blue (the generated text). Hovering over the text editor, there is a square container that shows a graph with two axes, anger and sadness, and dots. On the right of the interface, there is two pipeline buttons that are labelled "C" and "A". The settings for the "C" button are open which shows four text containers: (1) "Change sentences to be more polite and friendly", (2) "Whole email: [Whole text]", (3) "Original sentence: [Selection]", and (4) "Changed sentence: [Output]". Next to this input, there is the Model container that contains two generators with different colors. Next to that, there is the output container that presents three buttons represented by icons for the list lens, axis lens, and space lens. Under these buttons, there are two dropdown menus for the horizontal and vertical axis settings.](/assets/img/email.png)
+
+Our <b>email composing</b> interface packages cells, generators, and lenses into <b>"brushes"</b> that allow end-users to select text and perform their own desired generative functions on the selected text. For each brush, the end-users can assemble cells to specifcy the brush's purpose, set multiple generators to perform the function with various parameter settings, and explore outputs in their preferred way by choosing a lens for the brush. 
+
+### Storywriting Interface
+
+![The story writing interface which is split into four parts. The left-most part is a text editor. The second left-most part shows a tree representation where each node is represented as a block where each block contains a keyword. Also, there are lines connecting these dots. Only one path in this tree is selected (all the dots are filled with color) while the other dots are unfilled. The second right-most column shows several generators that are connected to different lenses in the right-most column. In the right-most column there are three lenses: a list lens that shows a list of text, a space lens that shows three dots in a 2D space, and finally a peek lens which shows a piece of text where certain sentences are invisible or more transparent.](/assets/img/storywriting.png)
+
+Our <b>story writing interface</b> partitions the end-user's story into cells and arranges them into a tree, which enable writers to assemble cells into <b>branching and parallel plotlines</b> for their story. In this interface, end-users can experiment with and compare configurations by linking cells to multiple generators and linking multiple generators to the same lens.
+
+------
 
 ## Bibtex
 <pre>
-@inproceedings{10.1145/3411764.3445686,
-  author = {Kim, Tae Soo and Kim, Seungsu and Choi, Yoonseo and Kim, Juho},
-  title = {Winder: Linking Speech and Visual Objects to Support Communication in Asynchronous Collaboration},
-  year = {2021},
-  isbn = {9781450380966},
+@inproceedings{kim2023cells,
+  author = {Kim, Tae Soo and Lee, Yoonjoo and Chang, Minsuk and Kim, Juho},
+  title = {Cells, Generators, and Lenses: Design Framework for Object-Oriented Interaction with Large Language Models},
+  year = {2023},
+  isbn = {9798400701320},
   publisher = {Association for Computing Machinery},
   address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/3411764.3445686},
-  doi = {10.1145/3411764.3445686},
-  booktitle = {Proceedings of the 2021 CHI Conference on Human Factors in Computing Systems},
-  articleno = {453},
-  numpages = {17},
-  keywords = {Visual Document, Team Collaboration, Speech, User Interface Design., Multimodal Input, Asynchronous Communication, Voice},
-  location = {Yokohama, Japan},
-  series = {CHI '21}
+  url = {https://doi.org/10.1145/3586183.3606833},
+  doi = {979-8-4007-0132-0/23/10},
+  booktitle = {The 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23), October 29-November 1, 2023, San Francisco, CA, USA},
+  numpages = {18},
+  location = {San Francisco, CA, USA},
+  series = {UIST '23}
 }
 </pre>
 
@@ -95,8 +84,8 @@ T5M2: *"With the voice recordings and the feature that showed what the users cli
 [![Logo of KAIST](/assets/img/kaist_logo.png)](https://kaist.ac.kr)
 
 {: .center .acknowledgement}
-This research was supported by the [KAIST](https://kaist.ac.kr) UP Program.
+This research was supported by the **KAIST-NAVER Hypercreative AI Center**.
 
 
-[1]:https://kixlab.github.io/website-files/2021/chi2021-Winder-paper.pdf
-[2]:https://dl.acm.org/doi/10.1145/3411764.3445686
+[1]:{{site.code}}
+[2]:{{site.paper}}

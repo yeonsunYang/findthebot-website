@@ -3,8 +3,12 @@
 
 @import "{{ site.theme }}";
 
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
 .wrapper {
-  max-width: calc(1000px - (30px * 2));
+  max-width: calc(940px - (30px * 2));
 }
 
 h1 {
@@ -31,18 +35,23 @@ h4 {
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  color: #333;
 }
 
 h3 {
   font-size: 20px;
   padding-top: 12px;
+  color: #333;
 }
 
 p {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #333;
+  color: #555;
   font-weight: 300;
+  & > b {
+    font-weight: 500;
+  }
 }
 
 .video-wrapper {
@@ -97,7 +106,7 @@ iframe {
 
 .acknowledgement {
   color: #999;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .logos {
@@ -140,6 +149,45 @@ pre {
 .sys-img {
   width: 90%;
   margin-left: 5%;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: #363636;
+  color: #fff;
+  font-size: 16px;
+  width: 80px;
+  cursor: pointer;
+
+  &:visited {
+    color: #fff;
+  }
+  &:active {
+    color: #fff;
+  }
+  &:hover {
+    background-color: #222222;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.introduction {
+  margin-bottom: 0px;
 }
 
 @media (max-width: 600px) {
