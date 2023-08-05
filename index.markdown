@@ -2,12 +2,20 @@
 layout: default
 ---
 
+{: .sys-img}
+![The teaser figure for the framework. Three headers are shown: Input, Model, and Output. Underneath each header there are diagrams depicting the Cells, Generators, and Lenses, respectively. Underneath Cells, dots that represent cells are shown. These dots are linked and one path of dots is highlighted with text for that path also displayed underneath the path. Underneath Model, rectangles that represent generators are displayed and these generators are connected with lines to the dots. One generator is highlighted with information about the model underneath it (i.e., GPT-4 model and its parameters). Underneath Lenses, three summarized representations of lenses are displayed: a list lens that shows generations as a list of text, a ratings lens that show ratings in bars, and a space lens that shows the generations as dots in a 2D space. These lenses are linked to the generators with lines.](/assets/img/teaser.png)
+
+<br/>
+
+<span style='color: #0066FF;'><b>Cells, Generators, and Lenses</b></span> is a design framework for LLM-powered writing interfaces that <b>modularizes</b> the components of generation configurations (e.g., input, model parameters, output spaces) into <b>interactive objects</b>. The framework aims to <b>guide</b> the design of interfaces that support end-users' <b>iteration and experimentation</b> with LLM configurations while writing with LLMs.
+
+We introduce three interfaces designed through the framework for different writing tasks: <b>copywriting</b>, <b>email composing</b>, and <b>story writing</b>. To facilitate the adoption of the framework, we package the UI components developed for the interactive objects into a <b>ReactJS library</b>."
+
+------
+
 ## Design Framework
 
 Our design framework represents the three main components of generation pipelines---<b>input, model, outputs</b>---into three iteractive objects---<b style="color:{{site.syscolor}}">cells, generators, and lenses</b>. By modularizing the components into these objects, writing interfaces can enable end-users to <b>(1)</b> maintain multiple <b>versions</b> of the generation components, <b>(2)</b> use each object as a <b>testing</b> sandbox for different sub-configurations, and <b>(3)</b> <b>compose</b> these objects into new and parallel configurations.
-
-{: .sys-img}
-![The teaser figure for the framework. Three headers are shown: Input, Model, and Output. Underneath each header there are diagrams depicting the Cells, Generators, and Lenses, respectively. Underneath Cells, dots that represent cells are shown. These dots are linked and one path of dots is highlighted with text for that path also displayed underneath the path. Underneath Model, rectangles that represent generators are displayed and these generators are connected with lines to the dots. One generator is highlighted with information about the model underneath it (i.e., GPT-4 model and its parameters). Underneath Lenses, three summarized representations of lenses are displayed: a list lens that shows generations as a list of text, a ratings lens that show ratings in bars, and a space lens that shows the generations as dots in a 2D space. These lenses are linked to the generators with lines.](/assets/img/teaser.png)
 
 ### Cells
 
@@ -38,6 +46,12 @@ Our design framework represents the three main components of generation pipeline
 ## Example Interfaces
 
 With this framework, we designed and developed three interfaces to demonstrate how the proposed interactive objects can support writing with LLMs.
+
+{% if site.video %}
+<div class="video-wrapper">
+  <iframe src="{{site.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{% endif %}
 
 ### Copywriting Interface
 

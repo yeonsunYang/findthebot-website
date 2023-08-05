@@ -334,8 +334,6 @@ pre { display: block; font-size: 14px; color: #333; word-break: break-all; word-
 
 .button:hover { background-color: #222222; color: #fff; text-decoration: none; }
 
-.introduction { margin-bottom: 0px; }
-
 @media (max-width: 600px) { h1 { font-size: 36px; } h4 { font-size: 20px; } h2 { font-size: 20px; } h3 { font-size: 16px; } p { font-size: 14px; } .author-container p { font-size: 10px; } pre { font-size: 10px; } .wrapper { max-width: calc(100vw - 30px); } .author-container { display: inline-block; width: 22%; margin: 0 1% 0 1%; } .img-left { display: block; text-align: center; width: 70%; margin-left: 15%; } .text-right { width: 100%; margin-left: 0px; } .sys-img { width: 100%; margin-left: 0; } }
 
 /*# sourceMappingURL=styles.css.map */

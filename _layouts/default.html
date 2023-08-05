@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{site.title}}</title>
+    <title>LLM UI Objects</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="shortcut icon" href="{{site.icon}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -70,18 +70,8 @@
         </a>
       </div>
     </div>
-    <div class="wrapper" style="width: 100%;">
-      <hr/>
-      <p class="introduction">{{site.introduction}}</p>
-    </div>
     <div class="wrapper">
       <hr/>
-      {% if site.video %}
-      <div class="video-wrapper">
-        <iframe src="{{site.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <hr/>
-      {% endif %}
       {{ content }}
     </div>
     {% if site.google_analytics %}
