@@ -9,13 +9,13 @@ layout: default
 
 <span style='color: #0066FF;'><b>Cells, Generators, and Lenses</b></span> is a design framework for LLM-powered writing interfaces that <b>modularizes</b> the components of generation configurations (e.g., input, model parameters, output spaces) into <b>interactive objects</b>. The framework aims to <b>guide</b> the design of interfaces that support end-users' <b>iteration and experimentation</b> with LLM configurations while writing with LLMs.
 
-We introduce three interfaces designed through the framework for different writing tasks: <b>copywriting</b>, <b>email composing</b>, and <b>story writing</b>. To facilitate the adoption of the framework, we package the UI components developed for the interactive objects into a <b>ReactJS library</b>."
+We introduce three interfaces designed through the framework for different writing tasks: <b>copywriting</b>, <b>email composing</b>, and <b>story writing</b>. To facilitate the adoption of the framework, we package the UI components developed for the interactive objects into a <b>ReactJS library</b>.
 
 ------
 
 ## Design Framework
 
-Our design framework represents the three main components of generation pipelines---<b>input, model, outputs</b>---into three iteractive objects---<b style="color:{{site.syscolor}}">cells, generators, and lenses</b>. By modularizing the components into these objects, writing interfaces can enable end-users to <b>(1)</b> maintain multiple <b>versions</b> of the generation components, <b>(2)</b> use each object as a <b>testing</b> sandbox for different sub-configurations, and <b>(3)</b> <b>compose</b> these objects into new and parallel configurations.
+Our design framework represents the three main components of generation pipelines---<b>input, model, outputs</b>---into three interactive objects---<b style="color:{{site.syscolor}}">cells, generators, and lenses</b>. By modularizing the components into these objects, writing interfaces can enable end-users to <b>(1)</b> maintain multiple <b>versions</b> of the generation components, <b>(2)</b> use each object as a <b>testing</b> sandbox for different sub-configurations, and <b>(3)</b> <b>compose</b> these objects into new and parallel configurations.
 
 ### Cells
 
@@ -23,7 +23,7 @@ Our design framework represents the three main components of generation pipeline
 ![Abstract representation of cell objects and their interactions. An abstract representation of a text editor is shown where the last part of the text is highlighted. This highlighted part is connected to a tree of dots, where each dot represents a cell and they are connected with lines to show their ordering. One branch out of the tree is labelled with "create" to show how cells can be created. Also, a branch that is connected coming out of the tree is shown with an arrow labeled "assemble" to show how cells can be assembled together into bigger ensembles. There is an arrow going between the two bottom branches of the tree it is labelled "copy" to show that cells can be copied. Next to the tree another abstract representation of the highlighted text is shown where parts are now highlighted in a different color and it is labelled "modify".](/assets/img/cells.png)
 
 {: .text-right}
-<b style="color: {{site.syscolor}}">Cells</b> are object representations of discrete input units. For example, a line of a prompt, an example in a prompt, a sentence of a story, a keyword, etc. An interface that supports cells can enable end-users to <b>create</b> multiple cells to maintian multiple input variatiosn to test, and <b>assemble</b> cells into comprehensive inputs for an LLM.
+<b style="color: {{site.syscolor}}">Cells</b> are object representations of discrete input units. For example, a line of a prompt, an example in a prompt, a sentence of a story, a keyword, etc. An interface that supports cells can enable end-users to <b>create</b> multiple cells to maintain multiple input variations to test, and <b>assemble</b> cells into comprehensive inputs for an LLM.
 
 ### Generators
 
@@ -63,7 +63,7 @@ In our <b>copywriting interface</b>, end-users can create and maintain alternati
 
 ![The email composing interface, which is split into two parts. On the left, there is a text editor that shows one portion of text highlighted in blue (the selected text) and the following portion of the text in blue (the generated text). Hovering over the text editor, there is a square container that shows a graph with two axes, anger and sadness, and dots. On the right of the interface, there is two pipeline buttons that are labelled "C" and "A". The settings for the "C" button are open which shows four text containers: (1) "Change sentences to be more polite and friendly", (2) "Whole email: [Whole text]", (3) "Original sentence: [Selection]", and (4) "Changed sentence: [Output]". Next to this input, there is the Model container that contains two generators with different colors. Next to that, there is the output container that presents three buttons represented by icons for the list lens, axis lens, and space lens. Under these buttons, there are two dropdown menus for the horizontal and vertical axis settings.](/assets/img/email.png)
 
-Our <b>email composing</b> interface packages cells, generators, and lenses into <b>"brushes"</b> that allow end-users to select text and perform their own desired generative functions on the selected text. For each brush, the end-users can assemble cells to specifcy the brush's purpose, set multiple generators to perform the function with various parameter settings, and explore outputs in their preferred way by choosing a lens for the brush. 
+Our <b>email composing</b> interface packages cells, generators, and lenses into <b>"brushes"</b> that allow end-users to select text and perform their own desired generative functions on the selected text. For each brush, the end-users can assemble cells to specify the brush's purpose, set multiple generators to perform the function with various parameter settings, and explore outputs in their preferred way by choosing a lens for the brush. 
 
 ### Storywriting Interface
 
