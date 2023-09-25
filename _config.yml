@@ -18,15 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Cells, Generators, and Lenses
+title: EvalLM
 theme: minima
-description: "Design Framework for Object-Oriented Interaction with Large Language Models"
+description: "Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria"
 
-syscolor: "#0066FF"
-sysfont: Lato
-video: https://www.youtube.com/embed/nfthwh0fH54
-paper: https://kixlab.github.io/website-files/2023/uist2023-llmobjects-paper.pdf
-code: https://github.com/kixlab/llm-ui-objects
+syscolor: "#555555"
+sysfont: Inter
+video: https://www.youtube-nocookie.com/embed/7hvTnhiCO7Y?si=6I9aqVnatM8VoaJd
+paper: https://arxiv.org
 
 plugins:
   - jekyll-feed

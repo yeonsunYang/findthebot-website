@@ -2,92 +2,75 @@
 layout: default
 ---
 
-{: .sys-img}
-![The teaser figure for the framework. Three headers are shown: Input, Model, and Output. Underneath each header there are diagrams depicting the Cells, Generators, and Lenses, respectively. Underneath Cells, dots that represent cells are shown. These dots are linked and one path of dots is highlighted with text for that path also displayed underneath the path. Underneath Model, rectangles that represent generators are displayed and these generators are connected with lines to the dots. One generator is highlighted with information about the model underneath it (i.e., GPT-4 model and its parameters). Underneath Lenses, three summarized representations of lenses are displayed: a list lens that shows generations as a list of text, a ratings lens that show ratings in bars, and a space lens that shows the generations as dots in a 2D space. These lenses are linked to the generators with lines.](/assets/img/teaser.png)
+<span class="sys-name">EvalLM</span> ⚗️ is an interactive system that aids prompt designers in iterating on **prompts** by evaluating and comparing generated outputs on user-defined **criteria**. With the aid of an **LLM-based evaluation assistant**, the user can iteratively evolve **criteria+prompts** to distinguish more specific qualities in outputs and then improve the quality of outputs on these aspects.
 
 <br/>
 
-<span style='color: #0066FF;'><b>Cells, Generators, and Lenses</b></span> is a design framework for LLM-powered writing interfaces that <b>modularizes</b> the components of generation configurations (e.g., input, model parameters, output spaces) into <b>interactive objects</b>. The framework aims to <b>guide</b> the design of interfaces that support end-users' <b>iteration and experimentation</b> with LLM configurations while writing with LLMs.
-
-We introduce three interfaces designed through the framework for different writing tasks: <b>copywriting</b>, <b>email composing</b>, and <b>story writing</b>. To facilitate the adoption of the framework, we package the UI components developed for the interactive objects into a <b>ReactJS library</b>.
-
-------
-
-## Design Framework
-
-Our design framework represents the three main components of generation pipelines---<b>input, model, outputs</b>---into three interactive objects---<b style="color:{{site.syscolor}}">cells, generators, and lenses</b>. By modularizing the components into these objects, writing interfaces can enable end-users to <b>(1)</b> maintain multiple <b>versions</b> of the generation components, <b>(2)</b> use each object as a <b>testing</b> sandbox for different sub-configurations, and <b>(3)</b> <b>compose</b> these objects into new and parallel configurations.
-
-### Cells
-
-{: .img-left}
-![Abstract representation of cell objects and their interactions. An abstract representation of a text editor is shown where the last part of the text is highlighted. This highlighted part is connected to a tree of dots, where each dot represents a cell and they are connected with lines to show their ordering. One branch out of the tree is labelled with "create" to show how cells can be created. Also, a branch that is connected coming out of the tree is shown with an arrow labeled "assemble" to show how cells can be assembled together into bigger ensembles. There is an arrow going between the two bottom branches of the tree it is labelled "copy" to show that cells can be copied. Next to the tree another abstract representation of the highlighted text is shown where parts are now highlighted in a different color and it is labelled "modify".](/assets/img/cells.png)
-
-{: .text-right}
-<b style="color: {{site.syscolor}}">Cells</b> are object representations of discrete input units. For example, a line of a prompt, an example in a prompt, a sentence of a story, a keyword, etc. An interface that supports cells can enable end-users to <b>create</b> multiple cells to maintain multiple input variations to test, and <b>assemble</b> cells into comprehensive inputs for an LLM.
-
-### Generators
-
-{: .img-left}
-![Image shows several tree of cells or dots that represent different ensembles of cells. There are lines connecting the trees to three rectangles that are labelled "Generators". One of these lines is labelled with an arrow that says "link". The top rectangle is connected to another rectangle that shows a slider labelled "parameter" and an arrow going left-to-right labelled "modify". The middle rectangle is connected to another rectangle that contains a row with "parameter" and an arrow going up, a row labelled "generations" and showing three abstract representations of text, and another row labelled "parameter" with an arrow going down. There is an arrow going down next to this rectangle that says "track".The bottom rectangles is more transparent and is labelled with "create".](/assets/img/generators.png)
-
-{: .text-right}
-<b style="color: {{site.syscolor}}">Generators</b> are object representations of model settings (i.e., type of LLM and parameter values). By supporting generators, interfaces can allow end-users to <b>maintain</b> multiple parameter settings, and flexibly <b>link</b> these with different inputs according to their present needs.
-
-### Lenses
-
-{: .img-left}
-![Image displays three rectangles (the middle one in a different color) that represent generators and are connected to two containers that are labelled "lens". There is an arrow between the middle generator and the top lens that is labelled "link". The top container shows dots spread out in two different colors that represent the top generator and middle generator. The bottom generator is connected to the bottom container which shows two boxes positioned vertically with abstract representations of text. This bottom container is linked to another container that contains rating bars and there is an arrow between these two that is labelled "assemble".](/assets/img/lenses.png)
-
-{: .text-right}
-<b style="color: {{site.syscolor}}">Lenses</b> are object representations of spaces that represent and visualize the generations produced. For example, these can include a list, a gallery, or a real-time confidence visualization. An interface can provide end-users with diverse lenses to support <b>navigation</b> of generated outputs based on personal, changing needs and goals.
+{: .sys-img}
+![Animation of the overall workflow of EvalLM where users sample inputs from a dataset, generate outputs from each input using two different prompts, and then comparatively evaluate these outputs on user-defined criteria.](/assets/img/animation.gif)
 
 ------
 
-## Example Interfaces
+## Interface
 
-With this framework, we designed and developed three interfaces to demonstrate how the proposed interactive objects can support writing with LLMs.
+The main screen of the interface consists of three panels.
+
+{: .sys-img}
+![Main screen of EvalLM shows three panels. The generation panel shows text boxes for the prompt and task instruction, and buttons for input sampling. The evaluation panel shows text boxes for the criteria, buttons for evaluating, and stacked bar charts for the evaluation results.](/assets/img/interface.png)
+
+<b>Generation Panel</b>: To generate outputs, the user defines their overall **task instruction** (A), two **prompts** they want to compare (B), and then **samples inputs** from a dataset (C) which will be used to test the prompts.
+
+**Evaluation Panel**: To evaluate outputs, the user defines a set of evaluation **<a href="#criteria" target="_self">criteria</a>** (D). Then, after evaluating, they can verify the overall *evaluation* performance of each prompt (E) or, if they created a validation set, *validate* how automatic evaluations align with ground-truth evaluations (F).
+
+**Data Panel**: This panel shows **<a href="#datarow" target="_self">data rows</a>** containing inputs, outputs, and evaluation results. 
+
+<br/>
+
+### <span id="criteria">Criteria</span>
+
+{: .text-left}
+<span class="sys-name">EvalLM</span> allows users to evaluate outputs on their own criteria specific to their application and/or context. 
+<br/><br/>
+To define a criteria, the user simply provides the criteria with a **name** (A) and **description** (B) in natural language.
+<br/><br/>
+To assist users in creating more effective and helpful criteria, the system automatically **reviews** their criteria (C) and provides **suggestions** (D) on how the criteria can be *refined*, *merged* and *split*.
+
+{: .img-right}
+![Criteria are represented as a set of text boxes that contain the name and description of the criteria. Suggested revisions are shown below the criteria.](/assets/img/criteria.png)
+
+<br/>
+
+### <span id="datarow">Data Row</span>
+
+{: .sys-img}
+![Data Rows in the interface display inputs, output pairs, and evaluation results. Clicking on evaluation results opens a panel that shows the explanation for that evaluation underneath the row.](/assets/img/datarow.png)
+
+For each sampled **input** (A), the interface presents the **outputs** generated from each prompt side-by-side (B) and the **evaluation results** for each criteria next to the outputs (C). For each criteria, the evaluation results show which prompt produced the output that better satisfied that criteria.
+
+If the user wants to see more details, they can click on one of these evaluations to see the assistant's **explanation** (D). To help the user match the explanation and outputs, the system also **highlights** spans from the outputs that were considered to be important when evaluating the criteria (E).
+
+If the user selected to evaluate outputs on multiple trials, they can see the evaluations for **other trials** through the carousel (F). 
+
+------
+
+## Video Demo
+
+See <span class="sys-name">EvalLM</span> in action in this Video Demo.
 
 {% if site.video %}
 <div class="video-wrapper">
-  <iframe src="{{site.video}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe src="{{site.video}}&color=white&rel=0&modestlogo=1" id="yt-video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 {% endif %}
-
-### Copywriting Interface
-
-![The copywriting interface which is partitioned in four components. The top-left components shows text boxes aligned according to lines, where the are multiple text boxes per line and only one in each line is highlighted.. The bottom-left component shows four buttons that represent generators where each generator shows the four parameters but with different values. There is also a button below these generators with a "+" mark. The bottom-right component shows two containers: one contains a list of text, and the other contains radial rating indicators. The top-right component shows a text editor. Next to the screenshot of the copywriting interface, we can see multiple sub-components. The first sub-component shows a generators where the temperature parameter has been clicked to reveal a control panel that shows the current temperature value and a slider to change the value. The second sub-component shows a generator where its history of changes is displayed. The history shows previous temperature changes and outputs that the generators has produced. The final sub-component shows the space and rating lens.](/assets/img/copywriting.png)
-
-In our <b>copywriting interface</b>, end-users can create and maintain alternative specifications for their desired advertisement as cells, and then assemble these into new combinations. The interface allows end-users to create multiple generators to test diverse parameter settings and to use various lenses to explore generated advertisements based on their content, similarity, sentiment and/or emotion.
-
-### Email Composing Interface
-
-![The email composing interface, which is split into two parts. On the left, there is a text editor that shows one portion of text highlighted in blue (the selected text) and the following portion of the text in blue (the generated text). Hovering over the text editor, there is a square container that shows a graph with two axes, anger and sadness, and dots. On the right of the interface, there is two pipeline buttons that are labelled "C" and "A". The settings for the "C" button are open which shows four text containers: (1) "Change sentences to be more polite and friendly", (2) "Whole email: [Whole text]", (3) "Original sentence: [Selection]", and (4) "Changed sentence: [Output]". Next to this input, there is the Model container that contains two generators with different colors. Next to that, there is the output container that presents three buttons represented by icons for the list lens, axis lens, and space lens. Under these buttons, there are two dropdown menus for the horizontal and vertical axis settings.](/assets/img/email.png)
-
-Our <b>email composing</b> interface packages cells, generators, and lenses into <b>"brushes"</b> that allow end-users to select text and perform their own desired generative functions on the selected text. For each brush, the end-users can assemble cells to specify the brush's purpose, set multiple generators to perform the function with various parameter settings, and explore outputs in their preferred way by choosing a lens for the brush. 
-
-### Storywriting Interface
-
-![The story writing interface which is split into four parts. The left-most part is a text editor. The second left-most part shows a tree representation where each node is represented as a block where each block contains a keyword. Also, there are lines connecting these dots. Only one path in this tree is selected (all the dots are filled with color) while the other dots are unfilled. The second right-most column shows several generators that are connected to different lenses in the right-most column. In the right-most column there are three lenses: a list lens that shows a list of text, a space lens that shows three dots in a 2D space, and finally a peek lens which shows a piece of text where certain sentences are invisible or more transparent.](/assets/img/storywriting.png)
-
-Our <b>story writing interface</b> partitions the end-user's story into cells and arranges them into a tree, which enable writers to assemble cells into <b>branching and parallel plotlines</b> for their story. In this interface, end-users can experiment with and compare configurations by linking cells to multiple generators and linking multiple generators to the same lens.
 
 ------
 
 ## Bibtex
 <pre>
-@inproceedings{kim2023cells,
-  author = {Kim, Tae Soo and Lee, Yoonjoo and Chang, Minsuk and Kim, Juho},
-  title = {Cells, Generators, and Lenses: Design Framework for Object-Oriented Interaction with Large Language Models},
-  year = {2023},
-  isbn = {9798400701320},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  url = {https://doi.org/10.1145/3586183.3606833},
-  doi = {979-8-4007-0132-0/23/10},
-  booktitle = {The 36th Annual ACM Symposium on User Interface Software and Technology (UIST '23), October 29-November 1, 2023, San Francisco, CA, USA},
-  numpages = {18},
-  location = {San Francisco, CA, USA},
-  series = {UIST '23}
+@inproceedings{kim2023evallm,
+author = {Kim, Tae Soo and Lee, Yoonjoo and Shin, Jamin and Kim, Young-Ho and Kim, Juho},
+title = {EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria},
+year = {2023}
 }
 </pre>
 
@@ -96,10 +79,7 @@ Our <b>story writing interface</b> partitions the end-user's story into cells an
 {: .logos}
 [![Logo of KIXLAB](/assets/img/kixlab_logo.png)](https://kixlab.org)
 [![Logo of KAIST](/assets/img/kaist_logo.png)](https://kaist.ac.kr)
+[![Logo of NAVER](/assets/img/naver_logo.png)](https://www.facebook.com/NAVERAILAB)
 
 {: .center .acknowledgement}
 This research was supported by the **KAIST-NAVER Hypercreative AI Center**.
-
-
-[1]:{{site.code}}
-[2]:{{site.paper}}
