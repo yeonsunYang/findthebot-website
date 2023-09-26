@@ -68,9 +68,12 @@ See <span class="sys-name">EvalLM</span> in action in this Video Demo.
 ## Bibtex
 <pre>
 @inproceedings{kim2023evallm,
-author = {Kim, Tae Soo and Lee, Yoonjoo and Shin, Jamin and Kim, Young-Ho and Kim, Juho},
-title = {EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria},
-year = {2023}
+title={EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria}, 
+author={Tae Soo Kim and Yoonjoo Lee and Jamin Shin and Young-Ho Kim and Juho Kim},
+year={2023},
+eprint={2309.13633},
+archivePrefix={arXiv},
+primaryClass={cs.HC}
 }
 </pre>
 

@@ -25,7 +25,7 @@ description: "Interactive Evaluation of Large Language Model Prompts on User-Def
 syscolor: "#555555"
 sysfont: Inter
 video: https://www.youtube-nocookie.com/embed/7hvTnhiCO7Y?si=6I9aqVnatM8VoaJd
-paper: https://arxiv.org
+paper: https://arxiv.org/abs/2309.13633
 
 plugins:
   - jekyll-feed
