@@ -86,3 +86,10 @@ primaryClass={cs.HC}
 
 {: .center .acknowledgement}
 This research was supported by the **KAIST-NAVER Hypercreative AI Center**.
+
+------
+
+{: .center .credits}
+Template from [EvalLM](https://github.com/kixlab/evallm-website) by [tsook](https://taesookim.com). Licensed under MIT License.
+<br/>
+Feel free to borrow the template. We only ask you to keep the credit links above.
