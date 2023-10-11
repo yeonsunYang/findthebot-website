@@ -113,12 +113,7 @@ iframe {
 .acknowledgement {
   color: #999;
   font-size: 16px;
-}
-
-.credits {
-  color: #aaa;
-  font-size: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 0px;
 }
 
 .logos {
@@ -253,6 +248,24 @@ strong {
   font-weight: 500;
 }
 
+.footer {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-top: 32px;
+
+  & > div {
+    max-width: calc(940px - (30px * 2));
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px 0;
+  }
+}
+
+.credits {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
 
 @media (max-width: 600px) {
   h1 {
@@ -308,5 +321,11 @@ strong {
   .sys-img {
     width: 100%;
     margin-left: 0;
+  }
+
+  .footer {
+    & > div {
+      max-width: calc(100vw - 30px);
+    }
   }
 }
