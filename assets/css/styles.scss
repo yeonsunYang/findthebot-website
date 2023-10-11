@@ -323,6 +323,14 @@ strong {
     margin-left: 0;
   }
 
+  .acknowledgement {
+    font-size: 12px;
+  }
+
+  .credits {
+    font-size: 10px;
+  }
+
   .footer {
     & > div {
       max-width: calc(100vw - 30px);
