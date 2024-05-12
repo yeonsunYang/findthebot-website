@@ -67,13 +67,21 @@ See <span class="sys-name">EvalLM</span> in action in this Video Demo.
 
 ## Bibtex
 <pre>
-@inproceedings{kim2023evallm,
-title={EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria}, 
-author={Tae Soo Kim and Yoonjoo Lee and Jamin Shin and Young-Ho Kim and Juho Kim},
-year={2023},
-eprint={2309.13633},
-archivePrefix={arXiv},
-primaryClass={cs.HC}
+@inproceedings{10.1145/3613904.3642216,
+author = {Kim, Tae Soo and Lee, Yoonjoo and Shin, Jamin and Kim, Young-Ho and Kim, Juho},
+title = {EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria},
+year = {2024},
+isbn = {9798400703300},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3613904.3642216},
+doi = {10.1145/3613904.3642216},
+booktitle = {Proceedings of the CHI Conference on Human Factors in Computing Systems},
+articleno = {306},
+numpages = {21},
+keywords = {Evaluation, Human-AI Interaction, Large Language Models, Natural Language Generation},
+location = {<conf-loc>, <city>Honolulu</city>, <state>HI</state>, <country>USA</country>, </conf-loc>},
+series = {CHI '24}
 }
 </pre>
 
