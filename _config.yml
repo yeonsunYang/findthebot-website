@@ -26,6 +26,7 @@ syscolor: "#555555"
 sysfont: Inter
 video: https://www.youtube-nocookie.com/embed/7hvTnhiCO7Y?si=6I9aqVnatM8VoaJd
 paper: https://arxiv.org/abs/2309.13633
+code: https://github.com/kixlab/evallm
 
 plugins:
   - jekyll-feed
