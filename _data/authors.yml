@@ -1,20 +1,24 @@
-- name: Tae Soo Kim
-  affiliation: KAIST
-  website: https://taesookim.com
-  img: taesoo.jpeg
-- name: Yoonjoo Lee
-  affiliation: KAIST
-  website: https://yoonjoolee.com
-  img: yoonjoo.jpeg
-- name: Jamin Shin
-  affiliation: NAVER AI Lab
-  website: https://www.jayshin.xyz/
-  img: jamin.jpg
-- name: Young-Ho Kim
-  affiliation: NAVER AI Lab
-  website: http://younghokim.net/
-  img: youngho.jpg
-- name: Juho Kim
-  affiliation: KAIST
-  website: https://juhokim.com
-  img: juho.jpg
+- name: Yeonsun Yang
+  affiliation: DGIST
+  website: https://yeonsunyang.com
+  img: yeonsun.jpg
+- name: Ahyeon Shin
+  affiliation: DGIST
+  website: 
+  img: ahyeon.jpg
+- name: Nayoung Kim 
+  affiliation: DGIST
+  website: 
+  img: 
+- name: Huidam Woo
+  affiliation: DGIST
+  website: 
+  img: 
+  - name: John Joon Young Cheng
+  affiliation: Midjourney
+  website: 
+  img:
+- name: Jean Y Song
+  affiliation: Yonsei University
+  website: 
+  img: jean.jpeg
